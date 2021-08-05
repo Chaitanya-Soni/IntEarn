@@ -1,0 +1,9 @@
+<div class="header-bar">
+<h1>Signin</h1>
+<form action="" method="post">
+{% csrf_token %}
+{{form.as_p}}
+<input type="submit" value="Login">
+</form>
+<p>Don't have account ? <a href="{% url 'signup'%}">Login</a> </p>
+</div>
