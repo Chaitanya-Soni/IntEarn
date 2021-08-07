@@ -1,8 +1,8 @@
 <div class="header-bar">
-<a href="{% url 'tasks' %}">Go back</a>
+<a href="{% url 'home' %}">Go back</a>
 <form action="" method="post">
 {% csrf_token %}
-<p>Are you sure you want to delete {{companyJobPost}} ? </p>
+<p>Are you sure you want to delete {{companyJobPost.jobname}} ? </p>
 <input type="submit" value="Delete">
 </form>
 </div>
