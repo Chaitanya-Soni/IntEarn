@@ -30,6 +30,7 @@ INSTALLED_APPS = [
     'student.apps.StudentConfig',
     'company.apps.CompanyConfig',
     'jobpost.apps.JobpostConfig',
+    'jobapplied.apps.JobappliedConfig',
 ]
 
 MIDDLEWARE = [
