@@ -1,0 +1,25 @@
+<h1>Add Skill</h1>
+<form action="" method="post">
+  {% csrf_token %} {{form.as_p}}
+  <input type="submit" value="Submit" />
+</form>
+<H1>Your Skills</H1>
+<h3></h3>
+<table>
+      <tr>
+        <th>Skills</th>
+        <th></th>
+      </tr>
+      {% for skill  in skills %}
+      <tr>
+        <td>{{skill.skill}}</td>
+       
+        <td> <form method="delete" action="{{skill.id}}">
+        <input type="submit"  value="DELETE">
+        </form></td>
+      </tr>
+      {%empty%}
+      <h3>No skills add your skills in above form</h3>
+      {% endfor %}
+    </table>
+

@@ -18,3 +18,9 @@
 <a href="{% url 'student/profile' %}">Profile</a>
 {% endif %}
 <h1>IntEarn Welcomes You</h1>
+<h2>Current Openings</h2>
+{% for job  in jobposts %}
+<h3>{{job.jobname}} stipend : {{job.jobStipend}} date created:{{job.dateCreated}}</h3>
+<td><a href="{% url 'jobpost' job.id %}">view</a></td>
+{% endfor %}
+
