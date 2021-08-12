@@ -1,0 +1,16 @@
+<h1>Add Awards</h1>
+<form action="" method="post">
+  {% csrf_token %} {{form.as_p}}
+  <input type="submit" value="Submit" />
+</form>
+<H1>Your Awards</H1>
+<h3></h3>
+      {% for award  in awards %}
+        <p>{{award}}</p>
+        <form method="delete" action="{{award.id}}">
+        <input type="submit"  value="DELETE">
+        </form>
+      {%empty%}
+      <h3>No Awards add your Awards in above form</h3>
+      {% endfor %}
+

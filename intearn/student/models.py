@@ -11,3 +11,57 @@ class student(models.Model):
 
     class Meta:
         order_with_respect_to = 'user'
+class Skills(models.Model):
+    studentpro=models.ForeignKey(student ,  on_delete=models.CASCADE, null=True, blank=True)
+    skill=models.CharField( max_length=50)
+    def __str__(self):
+        return self.skill
+
+    class Meta:
+        order_with_respect_to = 'studentpro'
+class Education(models.Model):
+    studentpro=models.ForeignKey(student ,  on_delete=models.CASCADE, null=True, blank=True)
+    institue = models.CharField( max_length=50)
+    grade = models.CharField( max_length=50)
+    startYear = models.DateField()
+    endYear = models.DateField(null=True)
+    studying = models.BooleanField()
+    def __str__(self):
+        return self.institue
+
+    class Meta:
+        order_with_respect_to = 'studentpro'
+class WorkExperince_Project(models.Model):
+    studentpro=models.ForeignKey(student ,  on_delete=models.CASCADE, null=True, blank=True)
+    company = models.CharField( max_length=50)
+    Position = models.CharField( max_length=50)
+    description = models.TextField()
+    startYear = models.DateField()
+    endYear = models.DateField(null=True)
+    currently = models.BooleanField()
+    def __str__(self):
+        return self.company
+
+    class Meta:
+        order_with_respect_to = 'studentpro'
+class Award(models.Model):
+    studentpro=models.ForeignKey(student ,  on_delete=models.CASCADE, null=True, blank=True)
+    nameAward = models.CharField( max_length=50)
+    Position = models.CharField( max_length=50)
+    description = models.TextField()
+    awardYear = models.DateField()
+    linkAward = models.URLField( max_length=200 , null =True)
+    def __str__(self):
+        return self.nameAward
+    class Meta:
+        order_with_respect_to = 'studentpro'
+class certification(models.Model):
+    studentpro=models.ForeignKey(student ,  on_delete=models.CASCADE, null=True, blank=True)
+    nameCertificate = models.CharField( max_length=50)
+    organisation = models.CharField( max_length=50)
+    certificateYear = models.DateField()
+    linkCertificate = models.URLField( max_length=200 , null =True)
+    def __str__(self):
+        return self.nameCertificate
+    class Meta:
+        order_with_respect_to = 'studentpro'

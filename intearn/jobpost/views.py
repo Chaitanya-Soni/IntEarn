@@ -22,7 +22,7 @@ class JobList(LoginRequiredMixin, ListView):
 
         return context
 
-class JobDetail(LoginRequiredMixin, DetailView):
+class JobDetail( DetailView):
     model = companyJobPost
     context_object_name = 'companyJobPost'
     template_name = 'jobpost/companyJobPost.html'

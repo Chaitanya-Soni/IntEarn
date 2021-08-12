@@ -10,6 +10,17 @@
 </div>
     <h1>IntEarn Welcomes You</h1>
     <a href="{% url 'home' %}">Go back</a>
-    <a href="{% url 'student/profile/update' student.id %}">Update Profile</a>
+    <br>
+    <a href="{% url 'student/profile/update' student.id %}">Update personal Profile</a>
+    <br>
+    <a href="{% url 'student/skills'  %}">Add skill</a>
+    <br>
+    <a href="{% url 'student/Education'  %}">Add Education</a>
+    <br>
+    <a href="{% url 'student/workProj'  %}">Add Work and Project ExperinceWork</a>
+    <br>
+    <a href="{% url 'student/Award'  %}">Add Awards</a>
+    <br>
+    <a href="{% url 'student/certification'  %}">Add Certifications</a>
 <h1>Profile :{{student.name}}</h1>
 <h1>Profile :{{student.phoneno}}</h1>

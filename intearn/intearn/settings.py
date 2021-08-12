@@ -30,7 +30,6 @@ INSTALLED_APPS = [
     'student.apps.StudentConfig',
     'company.apps.CompanyConfig',
     'jobpost.apps.JobpostConfig',
-    'jobapplied.apps.JobappliedConfig',
 ]
 
 MIDDLEWARE = [
@@ -113,3 +112,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+STATICFILES_DIRS = [
+    BASE_DIR / 'static',
+]
