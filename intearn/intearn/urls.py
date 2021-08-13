@@ -7,4 +7,5 @@ urlpatterns = [
     path('student/',include('student.urls')),
     path('company/',include('company.urls')),
     path('companyJobs/',include('jobpost.urls')),
+    path('jobapplied/',include('jobapplied.urls')),
 ]

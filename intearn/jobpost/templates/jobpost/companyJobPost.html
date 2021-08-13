@@ -10,6 +10,19 @@
 </div>
     <h1>IntEarn Welcomes You</h1>
     <a href="{% url 'home' %}">Go back</a>
+
+{% if apply == True %}
+<a href="{% url 'jobApply/student' job.id %}">Apply</a>
+{% else %}
+<a href="{% url 'jobUnApply/student' job.id %}">UnApply</a>
+{% endif %}
+{% if save == True %}
+<a href="{% url 'jobSave/student' job.id %}">Save</a>
+{% else %}
+<a href="{% url 'jobUnSave/student' job.id %}">Unsave</a>
+{% endif %}
+
+
 <h1>Company Name :{{ companyJobPost.companyPosted }}</h1>
 <h1>Job Name :{{ companyJobPost.jobname }}</h1>
 <h1>Job descritption :{{ companyJobPost.jobdescription }}</h1>
