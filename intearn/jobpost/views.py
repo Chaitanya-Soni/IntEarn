@@ -7,6 +7,8 @@ from django.views.generic import ListView
 from django.views.generic import DetailView
 from django.views.generic import CreateView, UpdateView ,DeleteView,FormView
 from django.contrib.auth.mixins import LoginRequiredMixin
+from student.models import student
+from jobapplied.models import jobApplied
 # Create your views here.
 class JobList(LoginRequiredMixin, ListView):
     model = companyJobPost
@@ -26,6 +28,34 @@ class JobDetail( DetailView):
     model = companyJobPost
     context_object_name = 'companyJobPost'
     template_name = 'jobpost/companyJobPost.html'
+    def get_context_data(self, **kwargs):
+        context = super(JobDetail, self).get_context_data(**kwargs)
+        try :
+            job=companyJobPost.objects.get(pk=self.object.pk)
+            stu=student.objects.get(user=self.request.user)
+            try :
+                    j=jobApplied.objects.get(JobPosted=job,studentApplied=stu)
+                    if(j.apply==True):
+                        context['apply']=False
+                    else :
+                        context['apply']=True
+                    if(j.savePost==True):
+                        context['save']=False
+                    else :
+                        context['save']=True
+                    context['job']=job
+                    return context
+            except jobApplied.DoesNotExist:
+                    context['save']=True
+                    context['apply']=True
+                    context['job']=job
+                    return context
+        except student.DoesNotExist:
+            context['save']=False
+            context['apply']=False
+            context['job']=job
+            return context    
+        
 class JobCreate(LoginRequiredMixin,CreateView):
     model = companyJobPost
     fields = ['jobname','jobdescrption','jobStipend','accepting']
