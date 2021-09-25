@@ -2,9 +2,6 @@ body {
   margin: 0;
   padding: 0;
 }
-body {
-  background-color: white;
-}
 .navbar-default {
   background-color: #112031;
 }
@@ -214,4 +211,83 @@ input[type="password"] {
 
 .f-pw-box {
   height: 350px;
+}
+
+/* footer */
+.footer{
+  position: relative;
+  text-align: center;  
+  bottom: 0;
+
+  background-color: #112031;
+  color:white;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.hr1{
+  border: 0;
+  border-top: 4px dashed white;
+  border-style: dotted;
+}
+.top-hr{
+  border: 0;
+}
+.footer-top{
+  display: inline-flex;
+  flex-direction: row;
+
+}
+.footer-top h4{
+  margin-top: 0;
+}
+.footer-top h4 a{
+  color:white;
+}
+
+.btoTopIcon{
+  margin-top:22px;
+  margin-right: 6px;
+}
+.btoTop{
+  text-decoration: none;
+}
+
+.fab{
+  margin-right: 20px;
+  margin-top: 20px;
+}
+
+.fa-youtube{
+  color: red;
+}
+
+.fa-instagram{
+background: #f09433;
+background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+background: -webkit-linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
+background-clip: text;
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+}
+.fa-instagram:hover{
+  background: #ffffff;
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+.fab:hover{
+  color: white;
+}
+.fa-twitter{
+  color: #5da9dd;
+}
+.fa-linkedin{
+  color: #0e76a8;
+}
+
+.footer-end p{
+  padding-top: 30px;
+  padding-bottom: 25px;
 }
