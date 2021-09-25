@@ -46,17 +46,17 @@
       <ul class="navbar-nav ">
       {% if request.user.is_authenticated %}
       <li class="nav-item signup">
-        <button type="button" class="btn buttons"><a href="{% url 'student/profile' %}">{{request.user}}</a></button>
+       <a class="btn buttons" href="{% url 'student/profile' %}">{{request.user}}</a>
         </li>
         <li class="nav-item login">
-          <button class="btn buttons"><a href="{% url 'logout' %}">Logout</a></button>
+          <a class="btn buttons" href="{% url 'logout' %}">Logout</a>
         </li>
       {% else %}
         <li class="nav-item signup">
-        <button type="button" class="btn buttons"><a href="{% url 'signup' %}">Signup</a></button>
+        <a class="btn buttons" href="{% url 'signup' %}">Signup</a>
         </li>
         <li class="nav-item login">
-          <button class="btn buttons"><a href="{% url 'login' %}">Login</a></button>
+          <a class="btn buttons" href="{% url 'login' %}">Login</a>
         </li>
       {% endif %}
       </ul>

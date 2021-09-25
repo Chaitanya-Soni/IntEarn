@@ -34,11 +34,11 @@ body {
   background-color: #ffffff;
   border: 1px solid;
 }
-.signup .buttons:hover {
+.signup .buttons:hover{
   color: #ffffff;
   background-color: #112031;
 }
-.login .buttons:hover {
+.login .buttons:hover{
   background-color: #ffffff;
   color: #112031;
 }
@@ -217,8 +217,8 @@ input[type="password"] {
 .footer{
   position: relative;
   text-align: center;  
+  margin-top: 40%;
   bottom: 0;
-
   background-color: #112031;
   color:white;
   font-family: 'Montserrat', sans-serif;
