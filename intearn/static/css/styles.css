@@ -1,152 +1,217 @@
 body {
-    margin: 0;
-    padding: 0;
-  }
-  .loginbox {
-    width: 320px;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    height: 400px;
-    background-color: #112031;
-    color: #fff;
-    top: 50%;
-    left: 50%;
-    position: absolute;
-    transform: translate(-50%, -50%);
-    box-sizing: border-box;
-    padding: 70px 30px;
-  }
-  
-  h1 {
-    margin: 0;
-    padding: 0 0 20px;
-    text-align: center;
-    font-size: 22px;
-  }
-  
-  .f-pw-h1{
-    margin: 0;
-    padding: 0 0 50px;
-    text-align: center;
-    font-size: 33px;
-  }
-  .loginbox p {
-    margin: 0;
-    padding: 0;
-    font-weight: bold;
-  }
-  .loginbox input {
-    width: 100%;
-    margin-bottom: 20px;
-  }
-  .loginbox input[type="email"],
-  input[type="password"] {
-    border: none;
-    color: white;
-    border-bottom: 1px solid #fff;
-    background: transparent;
-    outline: none;
-    height: 30px;
-  }
-  .loginbox input[type="submit"] {
-    border: none;
-    outline: none;
-    height: 40px;
-    background: #fb2525;
-    color: #fff;
-    font-size: 18px;
-    border-radius: 20px;
-  }
-  .loginbox input[type="submit"]:hover {
-    cursor: pointer;
-    background: #64cfaf;
-    color: #000;
-  }
-  .loginbox a {
-    text-decoration: none;
-    font-size: 18px;
-    line-height: 30px;
-    color: darkgrey;
-  
-  }
-  
-  .loginbox a:hover {
-    color: #64cfaf;
-  }
-  
-  
-  .signupbox {
-    width: 320px;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    height: 500px;
-    background-color: #112031;
-    color: #fff;
-    top: 50%;
-    left: 50%;
-    position: absolute;
-    transform: translate(-50%, -50%);
-    box-sizing: border-box;
-    padding: 70px 30px;
-  }
-  
-  
-  
-  .signupbox p {
-    margin: 0;
-    padding: 0;
-    font-weight: bold;
-  }
-  .signupbox input{
-    width: 100%;
-    margin-bottom: 20px;
-  }
-  .signupbox input[type="email"],
-  input[type="password"] {
-    border: none;
-    color: white;
-    border-bottom: 1px solid #fff;
-    background: transparent;
-    outline: none;
-    height: 30px;
-  }
-  .signupbox input[type="submit"] {
-    border: none;
-    outline: none;
-    height: 40px;
-    background: #fb2525;
-    color: #fff;
-    font-size: 18px;
-    border-radius: 20px;
-  }
-  .signupbox input[type="submit"]:hover {
-    cursor: pointer;
-    background: #64cfaf;
-    color: #000;
-  }
-  
-  
-  .signupbox a {
-    text-decoration: none;
-    font-size: 18px;
-    line-height: 30px;
-    color: darkgrey;
-  
-  }
-  
-  .signupbox a:hover {
-    color: #64cfaf;
-  }
-  
-  
-  .form-check input{
-    width: 15px;
-    height: 15px;
-  }
-  
-  .f-pw-box{
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-color: white;
+}
+.navbar-default {
+  background-color: #112031;
+}
+.company-name {
+  font-size: 30px;
+}
+.navbar a,
+.nav-item a {
+  color: white;
+}
+.nav-item a:hover {
+  color: #ffffff;
+}
+.search {
+  margin-left: 15px;
+  color: white;
+}
+.search:hover {
+  background-color: white;
+  color: #112031;
+}
+.login .buttons {
+  margin-left: 15px;
+  color: #ffffff;
+  background-color: #112031;
+  border: 1px solid #ffffff;
+}
+.signup .buttons {
+  color: #112031;
+  background-color: #ffffff;
+  border: 1px solid;
+}
+.signup .buttons:hover {
+  color: #ffffff;
+  background-color: #112031;
+}
+.login .buttons:hover {
+  background-color: #ffffff;
+  color: #112031;
+}
+.company-image {
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+}
+.cardbox {
+  padding: 0;
+  margin: 0;
+}
+#pricing {
+  margin: 0px;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.pricing-column {
+  padding: 3% 2%;
+}
+.banner {
+  background-color: #112031;
+  margin: 0;
+  color: #ffffff;
+}
+h2.banner {
+  padding-top: 70px;
+}
+.pricing-column .card-header img {
+  width: 100%;
+}
+
+.loginbox {
+  width: 320px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: 400px;
+  background-color: #112031;
+  color: #fff;
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  box-sizing: border-box;
+  padding: 70px 30px;
+}
+
+h1 {
+  margin: 0;
+  padding: 0 0 20px;
+  text-align: center;
+  font-size: 22px;
+}
+
+.f-pw-h1 {
+  margin: 0;
+  padding: 0 0 50px;
+  text-align: center;
+  font-size: 33px;
+}
+.loginbox p {
+  margin: 0;
+  padding: 0;
+  font-weight: bold;
+}
+.loginbox input {
+  width: 100%;
+  margin-bottom: 20px;
+}
+.loginbox input[type="email"],
+input[type="password"] {
+  border: none;
+  color: white;
+  border-bottom: 1px solid #fff;
+  background: transparent;
+  outline: none;
+  height: 30px;
+}
+.loginbox input[type="submit"] {
+  border: none;
+  outline: none;
+  height: 40px;
+  background: #fb2525;
+  color: #fff;
+  font-size: 18px;
+  border-radius: 20px;
+}
+.loginbox input[type="submit"]:hover {
+  cursor: pointer;
+  background: #64cfaf;
+  color: #000;
+}
+.loginbox a {
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 30px;
+  color: darkgrey;
+}
+
+.loginbox a:hover {
+  color: #64cfaf;
+}
+
+.signupbox {
+  width: 320px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: 500px;
+  background-color: #112031;
+  color: #fff;
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  box-sizing: border-box;
+  padding: 70px 30px;
+}
+
+.signupbox p {
+  margin: 0;
+  padding: 0;
+  font-weight: bold;
+}
+.signupbox input {
+  width: 100%;
+  margin-bottom: 20px;
+}
+.signupbox input[type="email"],
+input[type="password"] {
+  border: none;
+  color: white;
+  border-bottom: 1px solid #fff;
+  background: transparent;
+  outline: none;
+  height: 30px;
+}
+.signupbox input[type="submit"] {
+  border: none;
+  outline: none;
+  height: 40px;
+  background: #fb2525;
+  color: #fff;
+  font-size: 18px;
+  border-radius: 20px;
+}
+.signupbox input[type="submit"]:hover {
+  cursor: pointer;
+  background: #64cfaf;
+  color: #000;
+}
+
+.signupbox a {
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 30px;
+  color: darkgrey;
+}
+
+.signupbox a:hover {
+  color: #64cfaf;
+}
+
+.form-check input {
+  width: 15px;
+  height: 15px;
+}
+
+.f-pw-box {
   height: 350px;
-  }
-  
+}
