@@ -33,7 +33,8 @@ class User(AbstractBaseUser):
         max_length=255,
         unique=True,
     )
-    company = models.BooleanField(default=False)
+    role = ((False,'Student'),(True,'Company'),)
+    company = models.BooleanField(default=False,choices=role,)
     is_active = models.BooleanField(default=True)
     is_admin = models.BooleanField(default=False)
 

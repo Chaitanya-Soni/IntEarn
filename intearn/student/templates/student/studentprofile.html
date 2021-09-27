@@ -15,13 +15,98 @@
     <br>
     <a href="{% url 'student/skills'  %}">Add skill</a>
     <br>
+    <form action="" method="post">
+    {% csrf_token %} {{formskill.as_p}}
+    <input type="submit" value="Submit" />
+    </form>
+    <H1>Your Skills</H1>
+    <h3></h3>
+    <table>
+      <tr>
+        <th>Skills</th>
+        <th></th>
+      </tr>
+      {% for skill  in Skills %}
+      <tr>
+        <td>{{skill.skill}}</td>
+
+        <td> <form method="delete" action="{{skill.id}}">
+        <input type="submit"  value="DELETE">
+        </form></td>
+      </tr>
+      {%empty%}
+      <h3>No skills add your skills in above form</h3>
+      {% endfor %}
+    </table>
+    <br>
     <a href="{% url 'student/Education'  %}">Add Education</a>
+    <br>
+    <form action="" method="post">
+    {% csrf_token %} {{formEducation.as_p}}
+    <input type="submit" value="Submit" />
+    </form>
+    <H1>Your Education</H1>
+    <h3></h3>
+      {% for educ  in education %}
+        <p>{{educ}}</p>
+        <form method="delete" action="{{skill.id}}">
+        <input type="submit"  value="DELETE">
+        </form>
+      {%empty%}
+      <h3>No Education add your Education in above form</h3>
+      {% endfor %}
+
     <br>
     <a href="{% url 'student/workProj'  %}">Add Work and Project ExperinceWork</a>
     <br>
+    <form action="" method="post">
+    {% csrf_token %} {{formWork.as_p}}
+    <input type="submit" value="Submit" />
+    </form>
+    <H1>Your Work and Project Experince</H1>
+    <h3></h3>
+      {% for workProj  in work %}
+        <p>{{workProj}}</p>
+        <form method="delete" action="{{skill.id}}">
+        <input type="submit"  value="DELETE">
+        </form>
+      {%empty%}
+      <h3>No Work and Project Experince add your Work and Project Experince in above form</h3>
+      {% endfor %}
+    <br>
     <a href="{% url 'student/Award'  %}">Add Awards</a>
     <br>
+    <form action="" method="post">
+    {% csrf_token %} {{formAward.as_p}}
+    <input type="submit" value="Submit" />
+    </form>
+    <H1>Your Awards</H1>
+    <h3></h3>
+      {% for award  in awards %}
+        <p>{{award}}</p>
+        <form method="delete" action="{{award.id}}">
+        <input type="submit"  value="DELETE">
+        </form>
+      {%empty%}
+      <h3>No Awards add your Awards in above form</h3>
+      {% endfor %}
+    <br>
     <a href="{% url 'student/certification'  %}">Add Certifications</a>
+    <br>
+    <form action="" method="post">
+    {% csrf_token %} {{formCert.as_p}}
+    <input type="submit" value="Submit" />
+    </form>
+    <H1>Your Certifications</H1>
+    <h3></h3>
+      {% for certific  in cert %}
+        <p>{{certific}}</p>
+        <form method="delete" action="{{certific.id}}">
+        <input type="submit"  value="DELETE">
+        </form>
+      {%empty%}
+      <h3>No Certifications add your Certifications in above form</h3>
+      {% endfor %}
     <br>
     <a href="{% url 'jobApplylist'  %}">My Jobs</a>
 <h1>Profile :{{student.name}}</h1>
