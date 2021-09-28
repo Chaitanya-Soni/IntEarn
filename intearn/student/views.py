@@ -166,7 +166,7 @@ class AddSkills(LoginRequiredMixin,View):
             skill = Skills.objects.get(pk=pk)
             skill.delete()
         try:
-            skills=Skills.objects.filter(studentpro = student.objects.get(user=self.request.user)) 
+            skills=Skills.objects.filter(studentpro = student.objects.get(user=self.request.user))
             print(skills)
             return render(request, self.template_name, {'form': form,'skills':skills})
         except Skills.DoesNotExist:
@@ -191,7 +191,7 @@ class AddEducation(LoginRequiredMixin,View):
             educ = Education.objects.get(pk=pk)
             educ.delete()
         try:
-            educs=Education.objects.filter(studentpro = student.objects.get(user=self.request.user)) 
+            educs=Education.objects.filter(studentpro = student.objects.get(user=self.request.user))
             print(educs)
             return render(request, self.template_name, {'form': form,'educs':educs})
         except Education.DoesNotExist:
@@ -219,7 +219,7 @@ class AddWorkExperince_Project(LoginRequiredMixin,View):
             workProj = WorkExperince_Project.objects.get(pk=pk)
             workProj.delete()
         try:
-            workProjs=WorkExperince_Project.objects.filter(studentpro = student.objects.get(user=self.request.user)) 
+            workProjs=WorkExperince_Project.objects.filter(studentpro = student.objects.get(user=self.request.user))
             print(workProjs)
             return render(request, self.template_name, {'form': form,'workProjs':workProjs})
         except WorkExperince_Project.DoesNotExist:
@@ -248,7 +248,7 @@ class AddAward(LoginRequiredMixin,View):
             award = Award.objects.get(pk=pk)
             award.delete()
         try:
-            awards=Award.objects.filter(studentpro = student.objects.get(user=self.request.user)) 
+            awards=Award.objects.filter(studentpro = student.objects.get(user=self.request.user))
             print(awards)
             return render(request, self.template_name, {'form': form,'awards':awards})
         except Award.DoesNotExist:
@@ -276,7 +276,7 @@ class AddCertification(LoginRequiredMixin,View):
             certific = certification.objects.get(pk=pk)
             certific.delete()
         try:
-            certifics=certification.objects.filter(studentpro = student.objects.get(user=self.request.user)) 
+            certifics=certification.objects.filter(studentpro = student.objects.get(user=self.request.user))
             print(certifics)
             return render(request, self.template_name, {'form': form,'certifics':certifics})
         except certification.DoesNotExist:

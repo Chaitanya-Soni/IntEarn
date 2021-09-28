@@ -7,11 +7,14 @@ from .models import User
 class UserCreationForm(forms.ModelForm):
     password1 = forms.CharField(label='Password', widget=forms.PasswordInput)
     password2 = forms.CharField(
-        label='Password confirmation', widget=forms.PasswordInput)
+        label='Confirm Password', widget=forms.PasswordInput)
 
     class Meta:
         model = User
         fields = ('email', 'company')
+        widgets = {
+            'company': forms.RadioSelect(),
+        }
 
     def clean_password2(self):
         password1 = self.cleaned_data.get("password1")
