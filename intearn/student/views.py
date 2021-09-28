@@ -19,15 +19,8 @@ class ProfileManage(LoginRequiredMixin,View):
         formWork = WorkExperinceProjectForm(request.POST or None, request.FILES or None)
         formAward = AwardForm(request.POST or None, request.FILES or None)
         formCert = certificationForm(request.POST or None, request.FILES or None)
-        try:
-            stu=student.objects.get(user=self.request.user)
-            context = {
-            'student': stu
-            }
-            return render(request, "student/studentprofile.html",context)
-        except student.DoesNotExist:
-            return redirect('student/profile/create')
-        context={
+        stu=student.objects.get(user=request.user)
+        context={            
         'student': stu,
         'formskill': formSkill,
         'formEducation': formEducation,
@@ -46,32 +39,32 @@ class ProfileManage(LoginRequiredMixin,View):
             skill.delete()
         #skills
         try:
-            skills=Skills.objects.filter(studentpro = student.objects.get(user=self.request.user))
+            skills=Skills.objects.filter(studentpro = student.objects.get(user=self.request.user)) 
             print(skills)
             context['Skills']=skills
         except Skills.DoesNotExist:
             context['Skills']=None
         #education
         try:
-            educs=Education.objects.filter(studentpro = student.objects.get(user=self.request.user))
+            educs=Education.objects.filter(studentpro = student.objects.get(user=self.request.user)) 
             context['education']=educs
         except Education.DoesNotExist:
             context['education']=None
         #work
         try:
-            workProjs=WorkExperince_Project.objects.filter(studentpro = student.objects.get(user=self.request.user))
+            workProjs=WorkExperince_Project.objects.filter(studentpro = student.objects.get(user=self.request.user)) 
             context['work']=workProjs
         except WorkExperince_Project.DoesNotExist:
             context['work']=None
         #Award
         try:
-            awards=Award.objects.filter(studentpro = student.objects.get(user=self.request.user))
+            awards=Award.objects.filter(studentpro = student.objects.get(user=self.request.user)) 
             context['awards']=awards
         except Award.DoesNotExist:
             context['awards']=None
         #Cert
         try:
-            certifics=certification.objects.filter(studentpro = student.objects.get(user=self.request.user))
+            certifics=certification.objects.filter(studentpro = student.objects.get(user=self.request.user)) 
             context['cert']=certifics
         except certification.DoesNotExist:
             context['cert']=None
@@ -137,7 +130,7 @@ class ProfileManage(LoginRequiredMixin,View):
                                 return redirect('student/profile')
         return redirect('student/profile')
 
-def profile(request):
+def profile(request):    
     try:
         stu=student.objects.get(user=request.user)
         context = {
