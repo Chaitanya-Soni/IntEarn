@@ -23,6 +23,18 @@ class JobList(LoginRequiredMixin, ListView):
             context['companyJobPost'] = context['companyJobPost'].filter(jobdescrption__contains=search_input)
 
         return context
+class ApplyJobList(LoginRequiredMixin, ListView):
+    template_name = 'jobpost/applicants.html'
+    context_object_name = 'applicants'
+    def get_queryset(self):
+        job = companyJobPost.objects.get(pk=self.object.pk)
+        applicants = student.objects.filter(companyjobpost__apply=True,companyjobpost__pk=self.object.pk)
+        return applicants
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        job=companyJobPost.objects.get(pk=self.object.pk)
+        context['job'] = job
+        return context
 
 class JobDetail( DetailView):
     model = companyJobPost
