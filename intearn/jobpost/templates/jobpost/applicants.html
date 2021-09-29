@@ -1,0 +1,12 @@
+<table>
+      <tr>
+        <th>Jobs</th>
+      </tr>
+      {%for applicant in applicants %}
+      <tr>
+        <td>{{applicant.name}}</td>
+      </tr>
+      {%empty%}
+      <h3>No items</h3>
+      {% endfor %}
+</table>

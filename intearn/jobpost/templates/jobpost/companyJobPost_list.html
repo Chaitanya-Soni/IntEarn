@@ -20,6 +20,7 @@
         <th>Jobs</th>
         <th></th>
         <th></th>
+        <th></th>
       </tr>
       {%for jobs in companyJobPost %}
       <tr>
@@ -27,6 +28,7 @@
         <td><a href="{% url 'jobpost' jobs.id %}">view</a></td>
         <td><a href="{% url 'jobpost-update' jobs.id %}">edit</a></td>
         <td><a href="{% url 'jobpost-delete' jobs.id %}">delete</a></td>
+        <td><a href="{% url 'jobpost-ApplyList' jobs.id %}">aapplicants</a></td>
       </tr>
       {%empty%}
       <h3>No items</h3>
