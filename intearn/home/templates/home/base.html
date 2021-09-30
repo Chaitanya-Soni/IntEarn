@@ -47,18 +47,38 @@
 
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Hi, {{student.name}}
+            Hi, {% if request.user.company %}
+      {{company}}
+      {% else %}
+      {{student}}
+      {% endif %}
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <li><a class="dropdown-item" style="color: black;" href="{% url 'student/profile/update' student.id %}">Update Profile</a></li>
+          
+          {% if student != None %}
+          <li><a class="dropdown-item" style="color: black;" href="{% url 'student/profile' %}">Update Profile</a></li>
             <li><a class="dropdown-item" style="color: black;" href="{% url 'jobApplylist'  %}">My Jobs</a></li>
             <li><a class="dropdown-item" style="color: black;" href="{% url 'logout' %}">Logout</a></li>
+          {% else %}
+          <li><a class="dropdown-item" style="color: black;" href="{% url 'company/profile'  %}">Update Profile</a></li>
+            <li><a class="dropdown-item" style="color: black;" href="{% url 'joblist'  %}">My Jobs</a></li>
+            <li><a class="dropdown-item" style="color: black;" href="{% url 'logout' %}">Logout</a></li>
+          {% endif %}
+            
+            
           </ul>
         </li>
 
       {% if request.user.is_authenticated %}
       <li class="nav-item signup">
-       <a class="btn buttons" href="{% url 'student/profile' %}">{{request.user}}</a>
+      
+      {% if request.user.company %}
+      <a class="btn buttons" href="{% url 'company/profile' %}">{{request.user}}</a>
+      {% else %}
+      <a class="btn buttons" href="{% url 'student/profile' %}">{{request.user}}</a>
+      {% endif %}
+        
+       
         </li>
        
         <li class="nav-item login">
