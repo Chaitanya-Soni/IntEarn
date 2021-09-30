@@ -133,15 +133,22 @@ class ProfileManage(LoginRequiredMixin,View):
                                 return redirect('student/profile')
         return redirect('student/profile')
 
-def profile(request):    
-    try:
-        stu=student.objects.get(user=request.user)
-        context = {
-        'student': stu
-        }
-        return render(request, "student/studentprofile.html",context)
-    except student.DoesNotExist:
-        return redirect('student/profile/create')
+def profile(request): 
+    if(request.user.is_authenticated):
+            if(request.user.company==True):
+                return render(request, "home")
+            else :
+                try:
+                    stu=student.objects.get(user=request.user)
+                    context = {
+                            'student': stu
+                        }
+                    return render(request, "student/studentprofile.html",context)
+                except student.DoesNotExist:
+                    return redirect('student/profile/create')
+    else :
+        return render(request, "home")
+    
 class ProfileDetail(LoginRequiredMixin, DetailView):
     model = student
     context_object_name = 'student'
