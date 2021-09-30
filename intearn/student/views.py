@@ -19,7 +19,10 @@ class ProfileManage(LoginRequiredMixin,View):
         formWork = WorkExperinceProjectForm(request.POST or None, request.FILES or None)
         formAward = AwardForm(request.POST or None, request.FILES or None)
         formCert = certificationForm(request.POST or None, request.FILES or None)
-        stu=student.objects.get(user=self.request.user)
+        try :
+            stu=student.objects.get(user=request.user)
+        except student.DoesNotExist:
+            stu=None
         context={            
         'student': stu,
         'formskill': formSkill,
