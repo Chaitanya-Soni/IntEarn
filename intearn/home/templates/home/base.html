@@ -13,8 +13,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
 
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
     <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
 
     <title>IntEarn</title>
@@ -44,10 +44,23 @@
         </li>
       </ul>
       <ul class="navbar-nav ">
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Hi, {{student.name}}
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <li><a class="dropdown-item" style="color: black;" href="{% url 'student/profile/update' student.id %}">Update Profile</a></li>
+            <li><a class="dropdown-item" style="color: black;" href="{% url 'jobApplylist'  %}">My Jobs</a></li>
+            <li><a class="dropdown-item" style="color: black;" href="{% url 'logout' %}">Logout</a></li>
+          </ul>
+        </li>
+
       {% if request.user.is_authenticated %}
       <li class="nav-item signup">
        <a class="btn buttons" href="{% url 'student/profile' %}">{{request.user}}</a>
         </li>
+       
         <li class="nav-item login">
           <a class="btn buttons" href="{% url 'logout' %}">Logout</a>
         </li>
@@ -83,5 +96,7 @@
         <p>© Copyright 2021 | IntEarn</p>
       </div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+
   </body>
 </html>

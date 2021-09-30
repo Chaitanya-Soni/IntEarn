@@ -1,113 +1,24 @@
-<div class="header-bar">
-    <div>
-        <h1>Hello <p>{{request.user|title}}</p></h1>
-    </div>
-    {% if request.user.is_authenticated %}
-    <a href="{% url 'logout' %}">Logout</a>
-    {% else %}
-    <a href="{% url 'login' %}">Login</a>
-    {% endif %}
-</div>
-    <h1>IntEarn Welcomes You</h1>
-    <a href="{% url 'home' %}">Go back</a>
-    <br>
-    <a href="{% url 'student/profile/update' student.id %}">Update personal Profile</a>
-    <br>
-    <a href="{% url 'student/skills'  %}">Add skill</a>
-    <br>
-    <form action="" method="post">
-    {% csrf_token %} {{formskill.as_p}}
-    <input type="submit" value="Submit" />
-    </form>
-    <H1>Your Skills</H1>
-    <h3></h3>
-    <table>
-      <tr>
-        <th>Skills</th>
-        <th></th>
-      </tr>
-      {% for skill  in Skills %}
-      <tr>
-        <td>{{skill.skill}}</td>
-       
-        <td> <form method="delete" action="{{skill.id}}">
-        <input type="submit"  value="DELETE">
-        </form></td>
-      </tr>
-      {%empty%}
-      <h3>No skills add your skills in above form</h3>
-      {% endfor %}
-    </table>
-    <br>
-    <a href="{% url 'student/Education'  %}">Add Education</a>
-    <br>
-    <form action="" method="post">
-    {% csrf_token %} {{formEducation.as_p}}
-    <input type="submit" value="Submit" />
-    </form>
-    <H1>Your Education</H1>
-    <h3></h3>
-      {% for educ  in education %}
-        <p>{{educ}}</p>
-        <form method="delete" action="{{skill.id}}">
-        <input type="submit"  value="DELETE">
-        </form>
-      {%empty%}
-      <h3>No Education add your Education in above form</h3>
-      {% endfor %}
+{% extends 'home/base.html' %}
+{% load static %}
 
+{% block content %}
+<h1>Name :{{student.name}}</h1>
+<h1>Phone Number :{{student.phoneno}}</h1>
     <br>
-    <a href="{% url 'student/workProj'  %}">Add Work and Project ExperinceWork</a>
+    <a class="updateProfile" href="{% url 'student/profile/update' student.id %}">Update personal Profile</a>
     <br>
-    <form action="" method="post">
-    {% csrf_token %} {{formWork.as_p}}
-    <input type="submit" value="Submit" />
-    </form>
-    <H1>Your Work and Project Experince</H1>
-    <h3></h3>
-      {% for workProj  in work %}
-        <p>{{workProj}}</p>
-        <form method="delete" action="{{skill.id}}">
-        <input type="submit"  value="DELETE">
-        </form>
-      {%empty%}
-      <h3>No Work and Project Experince add your Work and Project Experince in above form</h3>
-      {% endfor %}
+    <a class="updateProfile" href="{% url 'jobApplylist'  %}">My Jobs</a>
     <br>
-    <a href="{% url 'student/Award'  %}">Add Awards</a>
     <br>
-    <form action="" method="post">
-    {% csrf_token %} {{formAward.as_p}}
-    <input type="submit" value="Submit" />
-    </form>
-    <H1>Your Awards</H1>
-    <h3></h3>
-      {% for award  in awards %}
-        <p>{{award}}</p>
-        <form method="delete" action="{{award.id}}">
-        <input type="submit"  value="DELETE">
-        </form>
-      {%empty%}
-      <h3>No Awards add your Awards in above form</h3>
-      {% endfor %}
-    <br>
-    <a href="{% url 'student/certification'  %}">Add Certifications</a>
-    <br>
-    <form action="" method="post">
-    {% csrf_token %} {{formCert.as_p}}
-    <input type="submit" value="Submit" />
-    </form>
-    <H1>Your Certifications</H1>
-    <h3></h3>
-      {% for certific  in cert %}
-        <p>{{certific}}</p>
-        <form method="delete" action="{{certific.id}}">
-        <input type="submit"  value="DELETE">
-        </form>
-      {%empty%}
-      <h3>No Certifications add your Certifications in above form</h3>
-      {% endfor %}
-    <br>
-    <a href="{% url 'jobApplylist'  %}">My Jobs</a>
-<h1>Profile :{{student.name}}</h1>
-<h1>Profile :{{student.phoneno}}</h1>
+    <div class="container">
+          <div class="col-xs-4">
+              <div class="form-group studentResume">
+              <input type="file" class="filestyle btn-secondary" data-icon="false">
+              <br>
+              <br>
+              <button class="btn btn-dark" type="submit">Submit</button>
+            </div>
+          </div>
+    </div>
+
+{% endblock content %}
