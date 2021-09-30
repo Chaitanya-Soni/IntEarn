@@ -1,10 +1,18 @@
+{% load static %}
 <table>
       <tr>
         <th>Jobs</th>
+        <th></th>
+        <th></th>
       </tr>
       {%for applicant in applicants %}
       <tr>
-        <td>{{applicant.name}}</td>
+        <td>{{applicant.studentApplied.name}}</td>
+        <td>{{applicant.studentApplied.phoneno}}</td>
+        <td>
+        <a href="{{ MEDIA_URL }}/{{applicant.studentApplied.file}}">View Resume</a>
+        </td>
+
       </tr>
       {%empty%}
       <h3>No items</h3>

@@ -19,7 +19,7 @@ class ProfileManage(LoginRequiredMixin,View):
         formWork = WorkExperinceProjectForm(request.POST or None, request.FILES or None)
         formAward = AwardForm(request.POST or None, request.FILES or None)
         formCert = certificationForm(request.POST or None, request.FILES or None)
-        stu=student.objects.get(user=request.user)
+        stu=student.objects.get(user=self.request.user)
         context={            
         'student': stu,
         'formskill': formSkill,
@@ -145,14 +145,14 @@ class ProfileDetail(LoginRequiredMixin, DetailView):
     template_name = 'student/studentprofile.html'
 class ProfileCreate(LoginRequiredMixin,CreateView):
     model = student
-    fields = ['name','phoneno']
+    fields = ['name','phoneno','file']
     success_url = reverse_lazy('student/profile')
     def form_valid(self, form):
         form.instance.user = self.request.user
         return super(ProfileCreate, self).form_valid(form)
 class ProfileUpadate(LoginRequiredMixin,UpdateView):
     model = student
-    fields = ['name','phoneno']
+    fields = ['name','phoneno','file']
     success_url = reverse_lazy('student/profile')
 
 #skills
