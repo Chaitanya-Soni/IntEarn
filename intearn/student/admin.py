@@ -2,7 +2,7 @@ from django.contrib import admin
 from .models import student,Skills,Education,WorkExperince_Project,Award,certification
 # Register your models here.
 class MyAdmin(admin.ModelAdmin):
-    list_display = ('user', 'name', 'phoneno')
+    list_display = ('user', 'name', 'phoneno','file')
 admin.site.register(student,MyAdmin)
 
 class MyAdminSkills(admin.ModelAdmin):
