@@ -1,14 +1,7 @@
-<div class="header-bar">
-    <div>
-        <h1>Hello <p>{{request.user|title}}</p></h1>
-    </div>
-    {% if request.user.is_authenticated %}
-    <a href="{% url 'logout' %}">Logout</a>
-    {% else %}
-    <a href="{% url 'login' %}">Login</a>
-    {% endif %}
-</div>
-    <h1>IntEarn Welcomes You</h1>
+{% extends 'home/base.html' %}
+{% load static %}
+
+{% block content %}
 <h1>My Jobs list</h1>
     <form  method="get">
     <input type="text" name="search-area">
@@ -29,3 +22,4 @@
       <h3>No items</h3>
       {% endfor %}
     </table>
+{% endblock content %}
