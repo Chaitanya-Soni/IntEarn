@@ -56,7 +56,7 @@
           <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
           
           {% if student != None %}
-          <li><a class="dropdown-item" style="color: black;" href="{% url 'student/profile' %}">Update Profile</a></li>
+          <li><a class="dropdown-item" style="color: black;" href="{%  url 'student/profile/update' student.id  %}">Update Profile</a></li>
             <li><a class="dropdown-item" style="color: black;" href="{% url 'jobApplylist'  %}">My Jobs</a></li>
             <li><a class="dropdown-item" style="color: black;" href="{% url 'logout' %}">Logout</a></li>
           {% else %}
@@ -68,30 +68,6 @@
             
           </ul>
         </li>
-
-      {% if request.user.is_authenticated %}
-      <li class="nav-item signup">
-      
-      {% if request.user.company %}
-      <a class="btn buttons" href="{% url 'company/profile' %}">{{request.user}}</a>
-      {% else %}
-      <a class="btn buttons" href="{% url 'student/profile' %}">{{request.user}}</a>
-      {% endif %}
-        
-       
-        </li>
-       
-        <li class="nav-item login">
-          <a class="btn buttons" href="{% url 'logout' %}">Logout</a>
-        </li>
-      {% else %}
-        <li class="nav-item signup">
-        <a class="btn buttons" href="{% url 'signup' %}">Signup</a>
-        </li>
-        <li class="nav-item login">
-          <a class="btn buttons" href="{% url 'login' %}">Login</a>
-        </li>
-      {% endif %}
       </ul>
       <form class="d-flex ">
         <input class="form-control search" type="search" placeholder="Search..." aria-label="Search">
